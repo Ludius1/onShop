@@ -81,3 +81,80 @@ const createProduct = (products) => {
 }
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.fa-bars');
+    const menu = document.querySelector('.side-menu');
+    const exitBtn = document.querySelector('.fa-circle-xmark');
+
+    menuBtn.addEventListener('click', () => {
+        menu.style.display = 'block'
+        menuBtn.style.display = 'none'
+        exitBtn.style.display = 'block'
+    })
+
+
+    exitBtn.addEventListener('click', () => {
+        menu.style.display = 'none'
+        exitBtn.style.display = 'none'
+        menuBtn.style.display = 'block'
+    })
+
+
+
+    // const exitBtn = document.createElement('div');
+    // // exitBtn.textContent = 'Exit';
+    // exitBtn.classList.add('fa-circle-xmark');
+    
+    // menuBtn.addEventListener('click', function() {
+    //   if (menu.style.display === 'none' || menu.style.display === '') {
+    //     menu.style.display = 'block';
+    //     exitBtn.style.display = 'block';
+    //     // menuBtn.style.display = 'none';
+    //     menuBtn.textContent = '';
+    //     // exitBtn.style.display = 'block';
+    //     menuBtn.appendChild(exitBtn);
+    //   } else {
+    //     menu.style.display = 'none';
+    //     menuBtn.removeChild(exitBtn);
+    //     exitBtn.style.display === 'none'
+    //   }
+    // });
+  });
+
+  const searchEl = document.querySelector("input");
+const allProdContainer = document.querySelector(".products__container");
+
+
+  searchEl.addEventListener("input", async (e) => {
+    console.log(e.target.value);
+    allProdContainer.style.display = "none";
+    const data = fetchProduct(e.target.value);
+    console.log(data);
+    // createProduct(data);
+    if (e.target.value.trim() == "") {
+      allProdContainer.style.display = "flex";
+    }
+  });
+  
+  // Fetch product from server and filter through
+  
+  const fetchProduct = async (searchText) => {
+    console.log(searchText);
+    const response = await fetch(`${baseUrl}/products`);
+    // console.log(response);
+    const data = await response.json();
+    loading.innerHTML = "";
+    // filter with search text
+    const filtered = data.filter((product) =>
+      product.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+    console.log(filtered);
+    // Remove existing content from the DOM
+    allProdContainer.innerHTML = "";
+    // Create products with the new filtered array
+    allProdContainer.style.display = "flex";
+    createProduct(filtered);
+  };
+  
+

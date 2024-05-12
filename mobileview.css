@@ -1,0 +1,182 @@
+@media screen and (max-width: 600px) {
+    .container {
+        width: 94%;
+        margin: 0 auto;
+    }
+   
+    .all__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 20px 20px;
+        z-index: 100;
+        justify-content: space-between;
+        background-color: rgb(255, 255, 255);
+    }
+    .shirts__section {
+        position: fixed;
+        z-index: 100;
+        background-color: white;
+        width: 100%;
+        padding: 20px 0;
+      
+    }
+    .products__section {
+        position: absolute;
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        top: 70px;
+        right: 0;
+        left: 0;
+    }
+    .products__container {
+        width: 94%;
+        margin: 0 auto;
+        padding-top: 30px;
+        z-index: 1;
+        margin-top: 50px;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .top__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .fa-circle-xmark {
+        display: none;
+    }
+
+    .side-menu {
+        width: 200px;
+        position: fixed;
+        display: none;
+        z-index: 9999;
+        }
+     .fa-bars, .fa-house {
+        display: block;
+    }
+    .logo__mobile {
+        display: block;
+        color: #5443c3;
+        display: flex;
+        justify-content: center;
+        color: #5443c3;
+        font-size: 20px;
+        grid-area: 4px;
+        font-weight: 600;
+        align-items: center;
+        gap: 8px;
+    }
+    .fa-solid {
+        font-size: 20px;
+    }
+    .menu__exitbtn {
+        display: block;
+    }
+    .left__header, .right__header {
+        display: none;
+    }
+    .mobile__search__header {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .mobile__search__header i {
+        position: absolute;
+        right: 5%;
+        top: 28%;
+        font-size: 11px;
+    }
+   input {
+        width: 100%;
+        border: 1px solid #c5c5c5 ;
+        border-radius: 20px;
+        padding: 10px ;
+        height: 32px;
+        background-color: none;
+        color: #000000;
+        background: none;
+    }
+    .product-card {
+        width: 170px; /* Reduced by 15% */
+        height: 255px; /* Reduced by 15% */
+        border-radius: 5px;
+        border: 1px solid #ececec;
+    }
+    
+    .product-card .inside_container {
+        margin: 8.5px; /* Reduced by 15% */
+        flex-direction: column;
+        display: flex;
+        text-align: start;
+    }
+    
+    .product-card .inside_container img {
+        width: 119px; /* Reduced by 15% */
+        height: 136px; /* Reduced by 15% */
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+    }
+    
+    .product-card .inside_container h2 {
+        font-size: 12.75px; /* Reduced by 15% */
+        margin: 4.25px 0; /* Reduced by 15% */
+        font-weight: 700;
+    }
+    
+    .product-card .inside_container p {
+        font-size: 8.5px; /* Reduced by 15% */
+    }
+    
+    .product-card .inside_container .product__sub__text {
+        display: flex;
+        justify-content: space-between;
+        margin: 4.25px 0; /* Reduced by 15% */
+        border-top: 1px solid #f7f7f7;
+    }
+    
+    .product-card .inside_container .product__sub__text .price,
+    .product-card .inside_container .product__sub__text .ratings {
+        font-size: 12.75px; /* Reduced by 15% */
+        font-weight: 600;
+    }
+    
+    .product__btn {
+        padding: 4.25px 0; /* Reduced by 15% */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .btn,
+    .add__to__cart {
+        padding: 6.8px 10.2px; /* Reduced by 15% */
+        font-size: 8.5px; /* Reduced by 15% */
+        border-radius: 3.4px; /* Reduced by 15% */
+    }
+    
+    .btn:hover,
+    .add__to__cart:hover {
+        padding: 6.8px 10.2px; /* Reduced by 15% */
+        font-size: 8.5px; /* Reduced by 15% */
+        border-radius: 3.4px; /* Reduced by 15% */
+        transition: .511s ease;
+    }
+    
+}
